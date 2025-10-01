@@ -1,6 +1,9 @@
 pipeline {
     agent {
-        any { image 'node:16'}
+        docker {
+             image 'node:16'
+            args '-u root'
+        }
     }
     environment {
         DOCKER_HUB_USER = "bibeki07"
