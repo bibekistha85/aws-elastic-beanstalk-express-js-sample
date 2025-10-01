@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker {
+        any {
              image 'node:16'
             args '-u root'
         }
