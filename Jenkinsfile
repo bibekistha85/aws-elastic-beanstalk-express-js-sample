@@ -1,5 +1,7 @@
 pipeline {
-    agent { label 'docker' } // Agent with Docker installed
+    agent {
+        docker { image 'node:16'}
+    }
     environment {
         DOCKER_HUB_USER = "bibeki07"
         IMAGE_NAME = "assignment2"
