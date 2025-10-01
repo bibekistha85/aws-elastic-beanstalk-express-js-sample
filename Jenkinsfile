@@ -24,6 +24,7 @@ pipeline {
         stage('Run security scan') {
             steps {
                 sh 'npm install -g snyk@latest'
+                sh 'snyk auth --auth-type=$snyktoken'
                 sh 'snyk test --severity-threshold=high'
             }
         }
