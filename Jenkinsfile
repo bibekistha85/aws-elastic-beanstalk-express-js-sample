@@ -27,7 +27,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'echo "no test found"'
+                sh 'npm test || echo "no test found"'
             }
         }
         stage('Run security scan') {
