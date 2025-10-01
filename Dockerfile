@@ -1,6 +1,7 @@
 FROM node:16
+WORKDIR /app
 COPY package*.json ./
-RUN npm ci --only=production
+RUN npm install
 COPY . .
-EXPOSE 8081
-CMD ["node", "app.js"]
+EXPOSE 8080
+CMD ["npm", "start"]
